@@ -2,7 +2,9 @@ package com.three.zhongdian;
 
 import com.three.zhongdian.author.mapper.AuthorMapper;
 import com.three.zhongdian.book.mapper.BookMapper;
+import com.three.zhongdian.book.mapper.BookRepository;
 import com.three.zhongdian.book.po.Book;
+import com.three.zhongdian.book.po.LookBook;
 import com.three.zhongdian.user.mapper.UserMapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -16,15 +18,10 @@ import java.util.List;
 @SpringBootTest
 public class ZhongdianApplicationTests {
 @Autowired
-private BookMapper bookMapper;
-@Autowired
-private AuthorMapper authorMapper;
+private BookRepository bookRepository;
 	@Test
 	public void contextLoads() {
-		List<Book> list = bookMapper.findBookAll();
-		for (int i=1 ; i<list.size() ;i++){
 
-		}
 
 
 	}

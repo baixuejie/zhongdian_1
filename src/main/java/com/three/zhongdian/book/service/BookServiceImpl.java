@@ -1,9 +1,11 @@
 package com.three.zhongdian.book.service;
 
 import com.three.zhongdian.book.mapper.BookMapper;
+import com.three.zhongdian.book.mapper.BookRepository;
 import com.three.zhongdian.book.po.BigType;
 import com.three.zhongdian.book.po.Book;
 import com.three.zhongdian.book.po.Comment;
+import com.three.zhongdian.book.po.LookBook;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +14,8 @@ import java.util.Map;
 
 @Service
 public class BookServiceImpl implements BookService {
-
+    @Autowired
+    private BookRepository bookRepository;
     @Autowired
     private BookMapper bookMapper;
 
@@ -64,5 +67,10 @@ public class BookServiceImpl implements BookService {
     @Override
     public List<Comment> findComment(Integer bookid) {
         return bookMapper.findComment(bookid);
+    }
+
+    @Override
+    public LookBook findByBookNameAndId(LookBook lookBook) {
+        return bookRepository.findByBookNameAndId(lookBook.getBookName(),lookBook.getId());
     }
 }

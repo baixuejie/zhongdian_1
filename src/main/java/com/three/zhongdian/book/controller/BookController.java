@@ -1,12 +1,11 @@
 package com.three.zhongdian.book.controller;
 
-import com.three.zhongdian.book.po.BigType;
-import com.three.zhongdian.book.po.Book;
-import com.three.zhongdian.book.po.Comment;
-import com.three.zhongdian.book.po.Tag;
+import com.three.zhongdian.book.mapper.BookRepository;
+import com.three.zhongdian.book.po.*;
 import com.three.zhongdian.book.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -255,5 +254,25 @@ public class BookController {
         mv.addObject("book",book);
         mv.addObject("comments",comments);
         return mv;
+    }
+    @RequestMapping("lookBook")
+    public String lookBook(Model model,LookBook lookBook,Book book,Integer lid){
+        lookBook.setId(lid);
+        Book bookById = bookService.findBookById(book.getId());
+        System.out.println(bookById.getBigType().getName()+"====================================");
+        model.addAttribute("bookById",bookById);
+        lookBook.setBookName(book.getName());
+        LookBook byBookNameAndId = bookService.findByBookNameAndId(lookBook);
+        model.addAttribute("byBookNameAndId",byBookNameAndId);
+        return "look";
+
+    }
+    @RequestMapping("hello")
+    @ResponseBody
+    public LookBook hello(){
+        LookBook lookBook=new LookBook();
+        lookBook.setBookName("雪鹰领主");
+        lookBook.setId(35);
+        return bookService.findByBookNameAndId(lookBook);
     }
 }

@@ -373,7 +373,7 @@
             </em>作品分类</span>
                 </li>
                 <li class="nav-li"><a href="#" data-eid="qd_A15" class="act">全部作品</a></li>
-                <li class="nav-li"><a href="#" data-eid="qd_A16">排行</a></li>
+                <li class="nav-li"><a href="../sortIndex" data-eid="qd_A16">排行</a></li>
                 <li class="nav-li"><a href="#" data-eid="qd_A17">完本</a></li>
                 <li class="nav-li"><a href="#" data-eid="qd_A18">免费</a></li>
                 <li class="nav-li"><a href="#"  data-eid="qd_A19">作家专区</a>
@@ -815,7 +815,12 @@
                             <div class="book-mid-info">
                                 <h4><a href="#" th:href="@{/findBookById(id=${book.id})}" target="_blank" data-eid="qd_B58" data-bid="3513193" th:text="${book.name}">雪鹰领主</a></h4>
                                 <p class="author">
-                                    <img src="//qidian.gtimg.com/qd/images/ico/user.0.1.png"><a class="name" href="#" data-eid="qd_B59" th:text="${book.author}">我吃西红柿</a><em>|</em><a href="#" data-eid="qd_B60" th:text="${book.bigType.name}">玄幻</a><!--<i>·</i><a class="go-sub-type" data-typeid="21" data-subtypeid="73" href="javascript:" data-eid="qd_B61" th:text="${book.smallType.name}">异世大陆</a>--><em>|</em><span th:text="${book.status}">连载中</span>
+                                    <img src="//qidian.gtimg.com/qd/images/ico/user.0.1.png">
+                                    <a class="writer"
+                                       th:href="@{findByAuthorName(name=${book.author})}"
+                                       target="_blank" data-eid="qd_G08"
+                                       th:text="${book.author}"></a>
+                                    <em>|</em><a href="#" data-eid="qd_B60" th:text="${book.bigType.name}">玄幻</a><!--<i>·</i><a class="go-sub-type" data-typeid="21" data-subtypeid="73" href="javascript:" data-eid="qd_B61" th:text="${book.smallType.name}">异世大陆</a>--><em>|</em><span th:text="${book.status}">连载中</span>
                                 </p>
                                 <p class="intro" th:text="${book.info}">
                                     在夏族的安阳行省，有一个很小很不起眼的领地，叫——雪鹰领！故事，就从这里开始！**继《莽荒纪》《吞噬星空》《九鼎记》《盘龙》《星辰变》《寸芒》《星峰
