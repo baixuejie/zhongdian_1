@@ -259,12 +259,12 @@
     <span>
         <cite class="lt"></cite>
 
-    <a href="//www.qidian.com" data-eid="qd_G01">首页</a><em class="iconfont"></em>
-    <a href="//xuanhuan.qidian.com" target="_blank" data-eid="qd_G02">玄幻频道</a><em class="iconfont"></em>
+    <a href="../index" data-eid="qd_G01">首页</a><em class="iconfont"></em>
+    <a href="../findBookByStatus?type=first" target="_blank" data-eid="qd_G02"th:text="${book.bigType.name}+'频道'">玄幻频道</a><em class="iconfont"></em>
 
-    <a href="//a.qidian.com/?chanId=21&amp;subCateId=73" target="_blank">异世大陆</a><em class="iconfont"></em>
+    <!--<a href="//a.qidian.com/?chanId=21&amp;subCateId=73" target="_blank">异世大陆</a><em class="iconfont"></em>-->
 
-    <a href="//book.qidian.com/info/3513193">雪鹰领主</a>
+    <a href="#" th:text="${book.name}">雪鹰领主</a>
         <cite class="rt"></cite>
     </span>
     </div>

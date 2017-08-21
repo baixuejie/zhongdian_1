@@ -638,9 +638,9 @@
                                     <a href="#"  data-bid="3513193" data-eid="qd_B57" target="_blank"><img th:attr="src=${books.picpath}"  src=""></a>
                                 </div>
                                 <div class="book-mid-info">
-                                    <h4><a href="//book.qidian.com/info/1004608738" th:text="${books.name}" target="_blank" data-eid="qd_C40" data-bid="1004608738"></a></h4>
+                                    <h4><a href="//book.qidian.com/info/1004608738" th:href="@{/findBookById(id=${books.id})}" th:text="${books.name}" target="_blank" data-eid="qd_C40" data-bid="1004608738"></a></h4>
                                     <p class="author">
-                                        <img src="//qidian.gtimg.com/qd/images/ico/user.0.2.png"><a class="name" th:text="${books.author}" href="//me.qidian.com/authorIndex.aspx?id=4362453" target="_blank" data-eid="qd_C41"></a><em>|</em><a href="//xuanhuan.qidian.com" th:text="${books.bigType.name}" target="_blank" data-eid="qd_C42">玄幻</a><em>|</em><span th:text="${books.status}">连载</span>
+                                        <img src="//qidian.gtimg.com/qd/images/ico/user.0.2.png"><a class="name" th:text="${books.author}" th:href="@{findByAuthorName(name=${books.author})}" href="//me.qidian.com/authorIndex.aspx?id=4362453" target="_blank" data-eid="qd_C41"></a><em>|</em><a href="//xuanhuan.qidian.com" th:text="${books.bigType.name}" target="_blank" data-eid="qd_C42">玄幻</a><em>|</em><span th:text="${books.status}">连载</span>
                                     </p>
                                     <p class="intro" th:text="${books.info}">
                                     </p>
